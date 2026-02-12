@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MANUEL PUGLISI | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { 
+            background-color: #e5e5e5; 
+            color: #000; 
+            font-family: 'JetBrains Mono', monospace; 
+            /* GRID PAPER EFFECT */
+            background-image: linear-gradient(#ccc 1px, transparent 1px), linear-gradient(90deg, #ccc 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+
+        /* BENTO BOX STYLE */
+        .bento-box {
+            background: #fff;
+            border: 3px solid #000;
+            padding: 1.2rem;
+            position: relative;
+            transition: all 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+            box-shadow: 6px 6px 0px #000;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .bento-box:hover {
+            transform: translate(-2px, -2px);
+            box-shadow: 10px 10px 0px #000;
+        }
+
+        /* LINK STYLING */
+        a.link-prj {
+            text-decoration: underline;
+            text-decoration-thickness: 2px;
+            text-decoration-color: #ffea00;
+            font-weight: 800;
+            color: #000;
+            transition: background 0.2s;
+        }
+        a.link-prj:hover {
+            background-color: #ffea00;
+            color: #000;
+        }
+
+        /* MARQUEE STRIP */
+        .marquee-strip {
+            background: #ffea00;
+            border-top: 4px solid #000;
+            border-bottom: 4px solid #000;
+            overflow: hidden;
+            white-space: nowrap;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+        }
+        .marquee-content { display: inline-block; animation: marquee 25s linear infinite; font-weight: 800; font-size: 1.2rem; padding: 10px 0; }
+        @keyframes marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+        /* PHOTO ANIMATION (FLOAT) */
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-8px); }
+            100% { transform: translateY(0px); }
+        }
+        .profile-float {
+            animation: float 4s ease-in-out infinite;
+        }
+
+        /* TAGS */
+        .tag { display: inline-block; background: #000; color: #fff; padding: 2px 6px; font-size: 0.65rem; font-weight: bold; margin-bottom: 8px; text-transform: uppercase; }
+        .tag-yellow { background: #ffea00; color: #000; border: 1px solid #000; }
+        
+        /* DENSE GRID */
+        .grid-dense {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="text-center py-12 border-b-4 border-black bg-white relative z-40 px-4">
+        
+        <div class="mb-6 flex justify-center">
+            <img src="me.jpg" alt="Manuel Puglisi" 
+                 class="w-32 h-32 rounded-full border-4 border-black object-cover shadow-[4px_4px_0px_#000] profile-float bg-gray-300">
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl md:text-8xl font-black tracking-tighter mb-2 leading-none uppercase break-words">
+            MANUEL PUGLISI
+        </h1>
+        
+        <div class="mb-6">
+            <span class="text-xl md:text-4xl font-black bg-black text-yellow-400 px-3 py-1 tracking-widest shadow-[4px_4px_0px_#ccc]">
+                pglm_io
+            </span>
+        </div>
+
+        <p class="text-xs md:text-sm font-bold bg-white border-2 border-black inline-block px-4 py-1 transform -rotate-1 shadow-[4px_4px_0px_#000]" 
+           data-it="DALLA FABBRICA AL SAAS • 100% BOOTSTRAPPED"
+           data-pt="DA FÁBRICA AO SAAS • 100% BOOTSTRAPPED"
+           data-es="DE LA FÁBRICA A SAAS • 100% BOOTSTRAPPED"
+           data-fr="DE L'USINE AU SAAS • 100% BOOTSTRAPPED">
+            FROM FACTORY TO SAAS • 100% BOOTSTRAPPED
+        </p>
+    </header>
+
+    <div class="marquee-strip">
+        <div class="marquee-content" 
+             data-it="/// DAL MONTAGGIO TURBINE ABB AL CODICE /// 15 PROGETTI IN PIPELINE /// HTLFIX LIVE /// VINTED GUIDE /// ORAFO 3.0 /// MANUEL ARTIGIANO DIGITALE /// DAL MONTAGGIO TURBINE ABB AL CODICE ///"
+             data-pt="/// DA MONTAGEM DE TURBINAS ABB AO CÓDIGO /// 15 PROJETOS NO PIPELINE /// HTLFIX LIVE /// GUIA VINTED /// ORAFO 3.0 /// MANUEL ARTESÃO DIGITAL ///"
+             data-es="/// DE TURBINAS ABB A CÓDIGO /// 15 PROYECTOS EN PIPELINE /// HTLFIX LIVE /// GUÍA VINTED /// ORAFO 3.0 /// MANUEL ARTESANO DIGITAL ///"
+             data-fr="/// DES TURBINES ABB AU CODE /// 15 PROJETS EN COURS /// HTLFIX LIVE /// GUIDE VINTED /// ORAFO 3.0 /// MANUEL ARTISAN NUMÉRIQUE ///">
+            /// FROM ABB TURBINES TO CODE /// 15 PROJECTS IN PIPELINE /// HTLFIX LIVE /// VINTED GUIDE /// GOLDSMITH 3.0 /// MANUEL DIGITAL CRAFTSMAN /// FROM ABB TURBINES TO CODE ///
+        </div>
+    </div>
+
+    <section class="grid-dense">
+
+        <div class="bento-box bg-yellow-50 md:col-span-2" data-aos="fade-up">
+            <div>
+                <span class="tag bg-green-500 text-black border border-black" 
+                      data-it="STATUS: 2026 BUILDING MODE"
+                      data-pt="STATUS: 2026 MODO CONSTRUÇÃO"
+                      data-es="ESTADO: 2026 MODO CONSTRUCCIÓN"
+                      data-fr="STATUT: 2026 MODE CONSTRUCTION">
+                      STATUS: 2026 BUILDING MODE
+                </span>
+                <h2 class="text-2xl md:text-3xl font-black mt-2" 
+                    data-it="DALLA TEORIA ALLA PRATICA"
+                    data-pt="DA TEORIA À PRÁTICA"
+                    data-es="DE LA TEORÍA A LA PRÁCTICA"
+                    data-fr="DE LA THÉORIE À LA PRATIQUE">
+                    FROM THEORY TO PRACTICE
+                </h2>
+                <p class="text-sm mt-2 mb-4" 
+                   data-it="A Febbraio ho iniziato la creazione dei miei SaaS B2B e B2C."
+                   data-pt="Em fevereiro comecei a criação dos meus SaaS B2B e B2C."
+                   data-es="En febrero comencé a crear mis SaaS B2B y B2C."
+                   data-fr="En février, j'ai commencé à créer mes SaaS B2B et B2C.">
+                   In February, I started building my B2B and B2C SaaS.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-2">
+                <div class="bg-white border-2 border-black p-3 shadow-[4px_4px_0px_#000]">
+                    <h3 class="text-xl font-black">HTLfix 🏨</h3>
+                    <p class="text-xs mt-1" 
+                       data-it="SaaS Gestionale Hotel (Housekeeping & Manutenzione)."
+                       data-pt="SaaS de Gestão Hoteleira (Governança & Manutenção)."
+                       data-es="SaaS de Gestión Hotelera (Limpieza y Mantenimiento)."
+                       data-fr="SaaS de Gestion Hôtelière (Ménage & Maintenance).">
+                       Hotel Management SaaS (Housekeeping & Maintenance).
+                    </p>
+                    <div class="mt-2 text-right">
+                        <a href="#" class="link-prj text-sm" 
+                           data-it="VAI AL SITO >"
+                           data-pt="VISITAR SITE >"
+                           data-es="VISITAR SITIO >"
+                           data-fr="VISITER LE SITE >">
+                           VISIT SITE >
+                        </a>
+                    </div>
+                </div>
+                <div class="bg-white border-2 border-black p-3 opacity-75 border-dashed">
+                    <h3 class="text-xl font-black" 
+                        data-it="15+ Idee in Cantiere 🏗️"
+                        data-pt="15+ Ideias no Pipeline 🏗️"
+                        data-es="15+ Ideas en Proyecto 🏗️"
+                        data-fr="15+ Idées en Chantier 🏗️">
+                        15+ Ideas in Pipeline 🏗️
+                    </h3>
+                    <p class="text-xs mt-1" 
+                       data-it="Trasformo le idee in asset digitali."
+                       data-pt="Transformo ideias em ativos digitais."
+                       data-es="Transformo ideas en activos digitales."
+                       data-fr="Je transforme des idées en actifs numériques.">
+                       Transforming ideas into digital assets.
+                    </p>
+                    <div class="mt-2 text-right">
+                        <span class="text-xs font-bold">WORK IN PROGRESS...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="bento-box" data-aos="fade-up" data-aos-delay="100">
+            <div>
+                <span class="tag" 
+                      data-it="2015-2021 • GERMANIA"
+                      data-pt="2015-2021 • ALEMANHA"
+                      data-es="2015-2021 • ALEMANIA"
+                      data-fr="2015-2021 • ALLEMAGNE">
+                      2015-2021 • GERMANY
+                </span>
+                <h2 class="text-xl font-black" 
+                    data-it="FABBRICA & RETTILI"
+                    data-pt="FÁBRICA & RÉPTEIS"
+                    data-es="FÁBRICA Y REPTILES"
+                    data-fr="USINE & REPTILES">
+                    FACTORY & REPTILES
+                </h2>
+            </div>
+            
+            <div class="mt-4 space-y-3">
+                <div class="border-l-2 border-black pl-2">
+                    <p class="text-xs font-bold text-gray-500">2015</p>
+                    <a href="#" class="link-prj">APS Arosio GmbH</a>
+                    <p class="text-xs leading-tight" 
+                       data-it="Operaio produzione."
+                       data-pt="Operário de produção."
+                       data-es="Trabajador de producción."
+                       data-fr="Ouvrier de production.">
+                       Production worker.
+                    </p>
+                </div>
+
+                <div class="border-l-2 border-black pl-2">
+                    <p class="text-xs font-bold text-gray-500">2018</p>
+                    <a href="#" class="link-prj">MPEalu</a>
+                    <p class="text-xs leading-tight" 
+                       data-it="Terrari per rettili con materiali di fabbrica."
+                       data-pt="Terrários para répteis com materiais de fábrica."
+                       data-es="Terrarios para reptiles con materiales de fábrica."
+                       data-fr="Terrariums pour reptiles avec matériaux d'usine.">
+                       Reptile terrariums using factory materials.
+                    </p>
+                </div>
+                <div class="border-l-2 border-black pl-2">
+                    <p class="text-xs font-bold text-gray-500">2018-2020</p>
+                    <a href="#" class="link-prj" 
+                       data-it="Manuel Artigiano Digitale"
+                       data-pt="Manuel Artesão Digital"
+                       data-es="Manuel Artesano Digital"
+                       data-fr="Manuel Artisan Numérique">
+                       Manuel Digital Craftsman
+                    </a> (YouTube)
+                    <p class="text-xs leading-tight" 
+                       data-it="Video guide costruzione CNC."
+                       data-pt="Guias de vídeo para construção CNC."
+                       data-es="Guías de video para construcción CNC."
+                       data-fr="Guides vidéo de construction CNC.">
+                       CNC construction video guides.
+                    </p>
+                </div>
+                <div class="border-l-2 border-black pl-2">
+                    <p class="text-xs font-bold text-gray-500">2020</p>
+                    <a href="#" class="link-prj">MP Atelier Artigianale</a> (IG)
+                    <p class="text-xs leading-tight" 
+                       data-it="Progetti Legno, Laser & Stampa 3D."
+                       data-pt="Projetos em Madeira, Laser & Impressão 3D."
+                       data-es="Proyectos en Madera, Láser e Impresión 3D."
+                       data-fr="Projets Bois, Laser & Impression 3D.">
+                       Wood, Laser & 3D Printing projects.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bento-box" data-aos="fade-up" data-aos-delay="200">
+            <div>
+                <span class="tag" 
+                      data-it="2022-2023 • SVIZZERA"
+                      data-pt="2022-2023 • SUÍÇA"
+                      data-es="2022-2023 • SUIZA"
+                      data-fr="2022-2023 • SUISSE">
+                      2022-2023 • SWITZERLAND
+                </span>
+                <h2 class="text-xl font-black" 
+                    data-it="TURBINE & MOBILI"
+                    data-pt="TURBINAS & MÓVEIS"
+                    data-es="TURBINAS Y MUEBLES"
+                    data-fr="TURBINES & MEUBLES">
+                    TURBINES & FURNITURE
+                </h2>
+            </div>
+            
+            <div class="mt-4 space-y-3">
+                <div class="border-l-2 border-black pl-2">
+                    <p class="text-xs font-bold text-gray-500">2022</p>
+                    <a href="#" class="link-prj">Planzer AG</a>
+                    <p class="text-xs leading-tight" 
+                       data-it="Montatore mobili professionale."
+                       data-pt="Montador de móveis profissional."
+                       data-es="Montador de muebles profesional."
+                       data-fr="Monteur de meubles professionnel.">
+                       Professional furniture assembler.
+                    </p>
+                </div>
+                
+                <div class="border-l-2 border-black pl-2">
+                    <p class="text-xs font-bold text-gray-500">2022</p>
+                    <a href="#" class="link-prj">Puglisi Service</a> (IG)
+                    <p class="text-xs leading-tight" 
+                       data-it="Side hustle montaggio privati (piccolo successo)."
+                       data-pt="Side hustle de montagem privada (pequeno sucesso)."
+                       data-es="Side hustle de montaje privado (pequeño éxito)."
+                       data-fr="Activité secondaire montage privé (petit succès).">
+                       Private assembly side hustle (small success).
+                    </p>
+                </div>
+
+                <div class="border-l-2 border-black pl-2">
+                    <p class="text-xs font-bold text-gray-500">2023</p>
+                    <a href="#" class="link-prj">ABB / Accelleron</a>
+                    <p class="text-xs leading-tight" 
+                       data-it="Meccanico Turbine Navali (Baden). 4 postazioni imparate in < 6 mesi."
+                       data-pt="Mecânico de Turbinas Navais (Baden). 4 estações aprendidas em < 6 meses."
+                       data-es="Mecánico de Turbinas Navales (Baden). 4 estaciones aprendidas en < 6 meses."
+                       data-fr="Mécanicien Turbines Navales (Baden). 4 postes appris en < 6 mois.">
+                       Marine Turbine Mechanic (Baden). 4 stations learned in < 6 months.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="bento-box" data-aos="fade-up" data-aos-delay="300">
+            <div>
+                <span class="tag" 
+                      data-it="2024-2025 • SICILIA"
+                      data-pt="2024-2025 • SICÍLIA"
+                      data-es="2024-2025 • SICILIA"
+                      data-fr="2024-2025 • SICILE">
+                      2024-2025 • SICILY
+                </span>
+                <h2 class="text-xl font-black" 
+                    data-it="INK & PIVOT DIGITALE"
+                    data-pt="INK & PIVÔ DIGITAL"
+                    data-es="TINTA Y PIVOTE DIGITAL"
+                    data-fr="ENCRE & PIVOT NUMÉRIQUE">
+                    INK & DIGITAL PIVOT
+                </h2>
+            </div>
+            
+            <div class="mt-4">
+                <p class="text-sm mb-2" 
+                   data-it="Acquisto attrezzatura tattoo e pratica su pelle."
+                   data-pt="Compra de equipamento de tattoo e prática em pele."
+                   data-es="Compra de equipo de tatuaje y práctica en piel."
+                   data-fr="Achat matériel tatouage et pratique sur peau.">
+                   Bought tattoo gear and practiced on skin.
+                </p>
+                <p class="text-sm mb-4" 
+                   data-it="Piccolo successo locale iniziale, poi declino."
+                   data-pt="Pequeno sucesso local inicial, depois declínio."
+                   data-es="Pequeño éxito local inicial, luego declive."
+                   data-fr="Petit succès local initial, puis déclin.">
+                   Initial small local success, then decline.
+                </p>
+                
+                <div class="bg-black text-white p-3 text-xs">
+                    <span class="text-green-400 font-bold" 
+                          data-it="OTTOBRE 2025:"
+                          data-pt="OUTUBRO 2025:"
+                          data-es="OCTUBRE 2025:"
+                          data-fr="OCTOBRE 2025:">
+                          OCTOBER 2025:
+                    </span><br>
+                    <span data-it="Decisione strutturale. Trasformare conoscenza manuale in prodotti digitali (AI & Web)."
+                          data-pt="Decisão estrutural. Transformar conhecimento manual em produtos digitais (IA & Web)."
+                          data-es="Decisión estructural. Transformar conocimiento manual en productos digitales (IA y Web)."
+                          data-fr="Décision structurelle. Transformer connaissances manuelles en produits numériques (IA & Web).">
+                          Structural decision. Transforming manual knowledge into digital products (AI & Web).
+                    </span>
+                </div>
+            </div>
+        </div>
+
+        <div class="bento-box" data-aos="fade-up" data-aos-delay="400">
+            <div>
+                <span class="tag-yellow" 
+                      data-it="Q4 2025 - OGGI • AUTORE"
+                      data-pt="Q4 2025 - HOJE • AUTOR"
+                      data-es="Q4 2025 - HOY • AUTOR"
+                      data-fr="T4 2025 - AUJOURD'HUI • AUTEUR">
+                      Q4 2025 - TODAY • AUTHOR
+                </span>
+                <h2 class="text-xl font-black" 
+                    data-it="GUIDE PRATICHE"
+                    data-pt="GUIAS PRÁTICOS"
+                    data-es="GUÍAS PRÁCTICAS"
+                    data-fr="GUIDES PRATIQUES">
+                    PRACTICAL GUIDES
+                </h2>
+                <p class="text-xs mt-1 mb-3" 
+                   data-it="Scrittura intensiva e prime vendite."
+                   data-pt="Escrita intensiva e primeiras vendas."
+                   data-es="Escritura intensiva y primeras ventas."
+                   data-fr="Écriture intensive et premières ventes.">
+                   Intensive writing and first sales.
+                </p>
+            </div>
+            
+            <ul class="space-y-2 text-sm font-bold">
+                <li class="flex items-center gap-2">
+                    📘 <a href="#" class="link-prj" 
+                          data-it="Orafo 3.0 (Dal banco al digitale)"
+                          data-pt="Orafo 3.0 (Da bancada ao digital)"
+                          data-es="Orafo 3.0 (Del banco a lo digital)"
+                          data-fr="Orafo 3.0 (De l'établi au numérique)">
+                          Goldsmith 3.0 (From bench to digital)
+                       </a>
+                </li>
+                <li class="flex items-center gap-2">
+                    📕 <a href="#" class="link-prj" 
+                          data-it="Vivere e Lavorare in Germania"
+                          data-pt="Viver e Trabalhar na Alemanha"
+                          data-es="Vivir y Trabajar en Alemania"
+                          data-fr="Vivre et Travailler en Allemagne">
+                          Living and Working in Germany
+                       </a>
+                </li>
+                <li class="flex items-center gap-2">
+                    📗 <a href="#" class="link-prj" 
+                          data-it="Vinted da zero a mille"
+                          data-pt="Vinted do zero a mil"
+                          data-es="Vinted de cero a mil"
+                          data-fr="Vinted de zéro à mille">
+                          Vinted from zero to a thousand
+                       </a>
+                </li>
+                <li class="flex items-center gap-2">
+                    📙 <a href="#" class="link-prj">Taormina Tourist Guide (ENG)</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="bento-box bg-black text-white border-white md:col-span-2 flex flex-col md:flex-row items-center justify-between gap-4" data-aos="fade-up" data-aos-delay="500">
+            <div class="text-left w-full">
+                <span class="tag bg-white text-black border-none">NEXT STEPS</span>
+                <h2 class="text-yellow-400 border-white text-2xl font-black mt-2" 
+                    data-it="SPOSARE MARIA & PARTIRE ✈️"
+                    data-pt="CASAR COM MARIA & PARTIR ✈️"
+                    data-es="CASARME CON MARIA Y PARTIR ✈️"
+                    data-fr="ÉPOUSER MARIA & PARTIR ✈️">
+                    MARRY MARIA & DEPART ✈️
+                </h2>
+                <p class="text-white text-sm mt-1 font-bold" 
+                   data-it="Obiettivo: Lasciare l'Italia. Nomade Digitale Full-Time."
+                   data-pt="Objetivo: Sair da Itália. Nômade Digital Full-Time."
+                   data-es="Objetivo: Dejar Italia. Nómada Digital Full-Time."
+                   data-fr="Objectif: Quitter l'Italie. Nomade Numérique à temps plein.">
+                   Goal: Leave Italy. Full-Time Digital Nomad.
+                </p>
+                <p class="text-gray-400 text-xs mt-2" 
+                   data-it="Nel frattempo sviluppo SaaS e accetto piccoli lavori."
+                   data-pt="Entretanto desenvolvo SaaS e aceito pequenos trabalhos."
+                   data-es="Mientras tanto desarrollo SaaS y acepto pequeños trabajos."
+                   data-fr="Pendant ce temps je développe des SaaS et prends des petits jobs.">
+                   Meanwhile developing SaaS and accepting small gigs.
+                </p>
+            </div>
+            <div class="flex-shrink-0">
+                <a href="mailto:tuamail@gmail.com" class="bg-yellow-400 text-black font-black py-3 px-6 border-4 border-transparent hover:border-white hover:bg-black hover:text-white transition shadow-[4px_4px_0px_#fff]" 
+                   data-it="SCRIVIMI"
+                   data-pt="ESCREVA-ME"
+                   data-es="ESCRÍBEME"
+                   data-fr="ÉCRIVEZ-MOI">
+                    EMAIL ME
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="text-center py-10 text-xs font-mono text-gray-500 border-t-2 border-gray-300 mt-10">
+        <p>BUILDING IN PUBLIC • © 2026 MANUEL PUGLISI</p>
+        <div class="mt-2 space-x-4">
+            <a href="#" class="hover:bg-black hover:text-white px-1">INSTAGRAM</a>
+            <a href="#" class="hover:bg-black hover:text-white px-1">X / TWITTER</a>
+            <a href="#" class="hover:bg-black hover:text-white px-1">LINKEDIN</a>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 600, once: true });
+
+        // UNIVERSAL LANGUAGE DETECTION SCRIPT (EN / IT / PT / ES / FR)
+        document.addEventListener("DOMContentLoaded", function() {
+            const userLang = navigator.language || navigator.userLanguage;
+            
+            // Function to apply translation
+            const applyTranslation = (langCode) => {
+                const elements = document.querySelectorAll(`[data-${langCode}]`);
+                elements.forEach(el => {
+                    if(el.getAttribute(`data-${langCode}`)) {
+                        el.innerText = el.getAttribute(`data-${langCode}`);
+                    }
+                });
+            };
+
+            if (userLang.startsWith('it')) {
+                applyTranslation('it');
+            } else if (userLang.startsWith('pt')) {
+                applyTranslation('pt');
+            } else if (userLang.startsWith('es')) {
+                applyTranslation('es');
+            } else if (userLang.startsWith('fr')) {
+                applyTranslation('fr');
+            }
+            // Default is English (no action needed)
+        });
+    </script>
+</body>
+</html>
